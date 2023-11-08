@@ -1,11 +1,12 @@
 import { Counter } from "./components/Counter";
 import { FetchData } from "./components/FetchData";
-import { Home } from "./components/Home";
+import LandingPage from "./components/LandingPage/LandingPage";
+import Login from "./components/Login/Login";
 
 const AppRoutes = [
   {
     index: true,
-    element: <Home />
+    element: <LandingPage />
   },
   {
     path: '/counter',
@@ -14,6 +15,10 @@ const AppRoutes = [
   {
     path: '/fetch-data',
     element: <FetchData />
+  },
+  {
+    path: '/login',
+    element: <Login />
   }
 ];
 

@@ -1,47 +1,87 @@
-import React, { Component } from 'react';
-import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import React, { useState } from 'react';
+import {
+    Navbar,
+    NavbarBrand,
+    NavbarToggler,
+    Collapse,
+    NavItem,
+    NavLink,
+    Dropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem
+} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
 
-export class NavMenu extends Component {
-  static displayName = NavMenu.name;
+function NavMenu() {
+    const [collapsed, setCollapsed] = useState(true);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  constructor (props) {
-    super(props);
+    const toggleNavbar = () => {
+        setCollapsed(!collapsed);
+    }
 
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      collapsed: true
-    };
-  }
+    const toggle = () => {
+        setDropdownOpen(!dropdownOpen);
+    }
 
-  toggleNavbar () {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
-
-  render() {
     return (
-      <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" container light>
-          <NavbarBrand tag={Link} to="/">MyFitPal</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-            <ul className="navbar-nav flex-grow">
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/counter">Counter</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>
-              </NavItem>
-            </ul>
-          </Collapse>
-        </Navbar>
-      </header>
+        <header>
+            <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" container light>
+                <NavbarBrand tag={Link} to="/"><img src="/images/logo.png" alt="MyFitPal Logo" id="logo-name" /></NavbarBrand>
+                <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+                <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!collapsed} navbar>
+                    <ul className="navbar-nav flex-grow">                        
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/counter">Set Goals</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/counter">Track Workouts</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/counter">Log Nutrition</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/counter">Nutrition Analysis</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/counter">Personalized Plans</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/counter">Progress Tracker</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/counter">Smart Watch</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/counter">Counter</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/login">Sign In</NavLink>
+                        </NavItem>
+                        {/*<NavItem>*/}
+                        {/*    <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>*/}
+                        {/*        <DropdownToggle nav caret>*/}
+                        {/*            Dropdown*/}
+                        {/*        </DropdownToggle>*/}
+                        {/*        <DropdownMenu>*/}
+                        {/*            <DropdownItem header>Header</DropdownItem>*/}
+                        {/*            <DropdownItem disabled>Action</DropdownItem>*/}
+                        {/*            <DropdownItem>Another Action</DropdownItem>*/}
+                        {/*            <DropdownItem divider />*/}
+                        {/*            <DropdownItem>Sign Out</DropdownItem>*/}
+                        {/*        </DropdownMenu>*/}
+                        {/*    </Dropdown>*/}
+                        {/*</NavItem>*/}
+                    </ul>
+                </Collapse>
+            </Navbar>
+        </header>
     );
-  }
 }
+
+export { NavMenu } ;
