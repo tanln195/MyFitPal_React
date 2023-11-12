@@ -1,12 +1,4 @@
-﻿.value-proposition-wrapper {
-    width: 100%;
-    background-color: #ddd6c8;
-    color: black;
-    display: flex;
-    justify-content: center;
-    padding: 3em 0;
-}
-
+﻿/* Base styles for all breakpoints */
 .value-proposition-info__div {
     width: 80%;
     display: flex;
@@ -48,7 +40,8 @@ hr {
     }
 
 /* Responsive */
-@media (max-width: 579px) {
+@media (max-width: 739px) {
+    /* Mobile styles */
     .title {
         font-size: 2.2rem;
     }
@@ -64,7 +57,8 @@ hr {
         }
 }
 
-@media (min-width: 580px) and (max-width: 765px) {
+@media (min-width: 740px) and (max-width: 1023px) {
+    /* Tablet styles */
     .title {
         font-size: 2.75rem;
     }
@@ -80,7 +74,8 @@ hr {
         }
 }
 
-@media (min-width: 766px) and (max-width: 1199px) {
+@media (min-width: 1024px) {
+    /* PC styles */
     .title {
         font-size: 2.9rem;
     }

@@ -1,11 +1,17 @@
-﻿/*Features classes*/
+﻿/* Features classes */
 .feature {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.feature-title-holder {
+    width: 80%;
 }
 
 .feature-title {
+    color: white;
     font-size: 5rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
@@ -14,6 +20,7 @@
 }
 
 .feature-title__italic {
+    color: #1EBBD7;
     font-size: 5rem;
     font-family: 'Poppins', sans-serif;
     font-style: italic;
@@ -21,19 +28,19 @@
 }
 
 .feature-card {
-    width: 95%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 25px;
-    margin: 3em 0;
+    margin: auto;
 }
 
 /* Responsive */
-@media (width < 580px) {
+@media (max-width: 739px) {
+    /* Mobile styles */
     .feature {
         width: 100%;
-        margin-left: 1.8rem;
     }
 
     .feature-title,
@@ -47,10 +54,10 @@
     }
 }
 
-@media (581px < width < 766px) {
+@media (min-width: 740px) and (max-width: 1023px) {
+    /* Tablet styles */
     .feature {
         width: 90%;
-        margin-left: 1.8rem;
     }
 
     .feature-title,
@@ -64,7 +71,12 @@
     }
 }
 
-@media (767px < width < 1199px) {
+@media (min-width: 1024px) {
+    /* PC styles */
+    .feature {
+        width: 90%;
+    }
+
     .feature-title,
     .feature-title__italic {
         font-size: 2.9rem;
@@ -73,15 +85,15 @@
     .feature-card {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        gap: 10px;
+        gap: 25px;
         margin: 3em 0;
     }
 }
 
-@media (1200px <= width <= 1398px) {
+@media (min-width: 1399px) {
     .feature-card {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         gap: 25px;
         margin: 3em 0;
     }

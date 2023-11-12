@@ -1,0 +1,26 @@
+﻿/* Additional styles for feature-card__title */
+.feature-card__title {
+    font-size: 2rem;
+}
+
+/* Responsive for .image */
+@media (max-width: 739px) {
+    /* Mobile styles */
+    .image {
+        width: 90%;
+    }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    /* Tablet styles */
+    .image {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* PC styles */
+    .image {
+        width: 100%;
+    }
+}

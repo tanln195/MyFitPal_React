@@ -3,7 +3,9 @@ import styles from './Wrapper.module.css'
 
 const Wrapper = (props) => {
     return (
-        <aside className={styles.wrapper}>{props.children}</aside>
+        <div className={styles.wrapper} style={props.style}>
+            {props.children}
+        </div>
     )
 }
 
