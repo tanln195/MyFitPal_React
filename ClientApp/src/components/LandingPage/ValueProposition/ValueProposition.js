@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { GoGoal } from 'react-icons/go';
 import { BiBarChart } from 'react-icons/bi';
@@ -92,7 +92,7 @@ const ValueProposition = () => {
 
     return (
         <Wrapper style={customWrapperStyle }>
-            <div className={styles['value-proposition-info__div']}>
+            <div id='value-proposition' className={styles['value-proposition-info__div']}>
                 <motion.p
                     variants={mainTitleAnimation}
                     initial='hidden'

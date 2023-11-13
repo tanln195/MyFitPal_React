@@ -1,21 +1,8 @@
-﻿import React from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 
 import Wrapper from '../UI/Wrapper';
 import styles from './Footer.module.css';
 
-const fadeinAnimate = {
-	hidden: {
-		opacity: 0,
-	},
-	visible: {
-		opacity: 1,
-		transition: {
-			ease: [0.2, 0.65, 0.3, 0.9],
-			duration: 2,
-		},
-	},
-};
 
 const Footer = () => {
 	const customWrapperStyle = {
@@ -25,7 +12,7 @@ const Footer = () => {
 
 	return (
 		<Wrapper style={customWrapperStyle }>
-			<footer className={styles['footer']}>
+			<footer id='footer' className={styles['footer']}>
 				<div className={styles['footer-content']}>
 					<div className={styles['contact-info']}>
 						<h3>Contact Us</h3>
@@ -34,9 +21,9 @@ const Footer = () => {
 					</div>
 					<div className={styles['social-links']}>
 						<h3>Follow Us</h3>
-						<a href="https://www.facebook.com/tan.le.1951" target="_blank" className={styles['social-icon']}>Facebook</a>
-						<a href="https://www.linkedin.com/in/tanlenang/" target="_blank" className={styles['social-icon']}>LinkedIn</a>
-						<a href="https://github.com/tanln195" target="_blank" className={styles['social-icon']}>GitHub</a>
+						<a href="https://www.facebook.com/tan.le.1951" target="_blank" rel="noreferrer"  className={styles['social-icon']}>Facebook</a>
+						<a href="https://www.linkedin.com/in/tanlenang/" target="_blank" rel="noreferrer"  className={styles['social-icon']}>LinkedIn</a>
+						<a href="https://github.com/tanln195" target="_blank" rel="noreferrer"  className={styles['social-icon']}>GitHub</a>
 					</div>
 				</div>
 				<div className={styles['copyright']}>

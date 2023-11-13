@@ -15,7 +15,7 @@ export class Layout extends Component {
 
         return (
             <div>
-                <NavMenu />
+                {/*<NavMenu />*/}
                 <Container tag="main" style={containerStyle}>
                     {this.props.children}
                 </Container>

@@ -1,5 +1,5 @@
 ﻿.navbar {
-    background-color: #181818;
+    background-color: black;
 }
 
 a.navbar-brand {
@@ -36,6 +36,6 @@ html {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-#logo-name {
+/*#logo-name {
     width: 10rem;
-}
+}*/

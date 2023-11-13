@@ -1,0 +1,68 @@
+﻿/* Base styles for all breakpoints */
+.navbar {
+    background-color: black;
+    padding: 1em 1.3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+#logo-name {
+    width: 10rem;
+}
+
+.btn-sign-up {
+    background-color: transparent;
+    border: 2px solid white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.2em 1.5em;
+    color: white;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+    text-decoration: none;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    /* Tablet styles */
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 739px) {
+    /* Mobile styles */
+    a.navbar-brand {
+        text-align: center;
+    }    
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    /* Tablet styles */
+}
+
+@media (min-width: 1024px) {
+    /* PC styles */
+
+    .box-shadow {
+        box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    }
+
+    .btn-sign-up {
+        font-size: 1rem;
+    }
+}
