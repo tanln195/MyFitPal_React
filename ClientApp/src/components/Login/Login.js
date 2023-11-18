@@ -51,6 +51,35 @@ function Login() {
                     alert("Login error!")
                 }
             })
+            //fetch('https://localhost:7127/api/login', {
+            //    method: 'POST',
+            //    headers: {
+            //        'Content-Type': 'application/json'
+            //    },
+            //    body: JSON.stringify(data)
+            //    //redirect: '/home'
+            //})
+            //    .then(response => {
+            //        if (!response.ok) {
+            //            throw new Error('Network response was not ok');
+            //        }
+            //        return response.json();
+            //    })
+            //    .then(text => {
+            //        // Check if the response body is not empty
+            //        const result = text ? JSON.parse(text) : null;
+
+            //        if (result && result.idUser > 0) {
+            //            alert("Login successfully");
+            //            sessionStorage.setItem("login", true);
+            //            sessionStorage.setItem("name", result.name);
+            //            sessionStorage.setItem("email", result.email);
+            //            setLogin(true);
+            //        } else {
+            //            alert("Login error!");
+            //        }
+            //    })
+            //    .catch(error => console.log('error', error));
         }
         if (login) {
             /*return <Redirect to={{ pathname: "/home" }} />*/
@@ -110,9 +139,9 @@ function Login() {
                                 onChange={(e) => setPassword(e.target.value)}/> 
                             {renderErrorMessage("pass")}
                         </div>
-                        <p className={clsx("text-center mt-3")}>
-                            <Link className={styles['forgot-password']} to="/sign-up" >Forgot your password?</Link>
-                        </p>
+                        {/*<p className={clsx("text-center mt-3")}>*/}
+                        {/*    <Link className={styles['forgot-password']} to="/sign-up" >Forgot your password?</Link>*/}
+                        {/*</p>*/}
                         <div className={styles['button-container']}>
                             <button type="submit">Sign In</button>
                         </div>

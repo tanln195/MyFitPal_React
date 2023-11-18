@@ -1,6 +1,8 @@
 
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using MyFitPal.Functions;
+using MyFitPal.Utility;
 
 namespace MyFitPal
 {
@@ -10,29 +12,30 @@ namespace MyFitPal
         {
             var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
             var builder = WebApplication.CreateBuilder(args);
-            var startup = new Startup(builder.Configuration); // My custom startup class.
+            //var startup = new Startup(builder.Configuration); // My custom startup class.
 
             // Add services to the container.
 
             builder.Services.AddControllersWithViews();
-            startup.ConfigureServices(builder.Services); // Add services to the container.
-            
+            //startup.ConfigureServices(builder.Services); // Add services to the container.
+
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                   policy =>
                                   {
-                                      policy.WithOrigins("https://localhost:44430",
-                                                          "https://localhost:7127")
+                                      policy.AllowAnyOrigin()
                                                             .AllowAnyHeader()
                                                             .AllowAnyMethod(); ;
                                   });
             });
 
+            var connectionString = builder.Configuration.GetConnectionString("MyDatabaseConnection");
+            builder.Services.AddDbContext<EFDataContext>(options => options.UseSqlServer(connectionString));
 
             var app = builder.Build();
 
-            startup.Configure(app, app.Environment); // Configure the HTTP request pipeline.
+            //startup.Configure(app, app.Environment); // Configure the HTTP request pipeline.
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -43,9 +46,10 @@ namespace MyFitPal
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseRouting();
 
-            app.UseCors(MyAllowSpecificOrigins);
+            
 
             app.UseAuthorization();
 
