@@ -22,9 +22,9 @@ namespace MyFitPal.Controllers
             _db = db;
         }
 
-        [HttpPost("login")]
-        //[Route("login")]
-        [HttpPost("api/login")]
+        [HttpPost]
+        [Route("login")]
+        //[HttpPost("api/login")]
         //[EnableCors("MyPolicy")] // Required for this path.
         [EnableCors("_myAllowSpecificOrigins")]
         public ActionResult PostLogin(FormUserView _user)
